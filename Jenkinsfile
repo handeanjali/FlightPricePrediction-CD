@@ -12,7 +12,7 @@ pipeline {
 
         stage("Checkout from SCM") {
             steps {
-                git branch: 'main', credentialsId: 'GitHub', url: 'https://github.com/handeanjali/FlightPricePrediction-CD.git'
+                git branch: 'main', credentialsId: 'GitHub', url: 'https://github.com/handeanjali/FlightPricePrediction-CD'
             }
         }
 
