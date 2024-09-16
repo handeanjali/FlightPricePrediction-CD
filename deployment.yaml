@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: flight
-        image: handeanjali/flight-Pred:1.0.0-2
+        image: handeanjali/flight-pred:1.0.0-2
         ports:
         - containerPort: 3000
 
