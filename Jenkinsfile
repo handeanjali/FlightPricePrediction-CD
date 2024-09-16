@@ -12,7 +12,7 @@ pipeline {
 
         stage("Checkout from SCM") {
             steps {
-                git branch: 'main', credentialsId: 'GitHub', url: 'https://github.com/gawaliashay/FlightPricePrediction-CD'
+                git branch: 'main', credentialsId: 'GitHub', url: 'https://github.com/handeanjali/FlightPricePrediction-CD.git'
             }
         }
 
@@ -33,14 +33,14 @@ pipeline {
                 script {
                     gitCommitMsg = "Updated Deployment Manifest with image tag: ${params.IMAGE_TAG}"
                     sh """
-                       git config --global user.name "gawaliashay"
-                       git config --global user.email "gawali.ashay@gmail.com"
+                       git config --global user.name "handeanjali"
+                       git config --global user.email "anjalihande16@gmail.com"
                        git add deployment.yaml
                        git commit -m "${gitCommitMsg}"
                     """
                 }
                 withCredentials([gitUsernamePassword(credentialsId: 'GitHub', gitToolName: 'Default')]) {
-                    sh "git push https://github.com/gawaliashay/FlightPricePrediction-CD main"
+                    sh "git push https://github.com/handeanjali/FlightPricePrediction-CD main"
                 }
             }
         }
